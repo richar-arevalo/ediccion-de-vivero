@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <!-- Perfil del Usuario -->
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <div class="d-flex align-items-center gap-2">
+                        <!-- Icono -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                        </svg>
+                        <!-- Título -->
+                        <h3 class="mb-0">Perfil de Usuario</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="text-center">Bienvenido, <strong>{{ user.first_name }} {{ user.last_name }}</strong></p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Nombre de usuario:</strong> {{ user.username }}</p>
+                            <p><strong>Correo electrónico:</strong> {{ user.email }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Nombre:</strong> {{ user.first_name }}</p>
+                            <p><strong>Apellido:</strong> {{ user.last_name }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <a href="" class="btn btn-secondary">Editar Perfil</a>
+                        <a href="{% url 'logout' %}" class="btn btn-danger">Cerrar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Compras del Usuario -->
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <div class="d-flex align-items-center gap-2">
+                        <!-- Icono -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a3 3 0 0 0-3 3H3.5a.5.5 0 0 0-.5.5v1A.5.5 0 0 0 3.5 6h9a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H11a3 3 0 0 0-3-3zM3 7v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7H3z" />
+                        </svg>
+                        <!-- Título -->
+                        <h3 class="mb-0">Mis Compras</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% if compras %}
+                        <ul class="list-group">
+                            {% for compra in compras %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    {{ compra.product.name }} - ${{ compra.product.price }}
+                                    <span class="badge bg-primary rounded-pill">{{ compra.quantity }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="text-center text-muted">No tienes compras aún.</p>
+                    {% endif %}
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

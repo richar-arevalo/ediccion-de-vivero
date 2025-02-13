@@ -1,0 +1,45 @@
+{% block content %}
+{% load static %}
+<style>
+/* Restaurar el tamaño de fuente en el modal */
+#registroModal {
+  font-size: 1rem; /* Otra vez el tamaño de fuente deseado para el modal */
+}
+
+</style>
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registroModalLabel">Iniciar Sesion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="username" class="form-label">Correo electronico" </label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+          <!-- Otros campos del formulario -->
+          <!-- Botón de registro -->
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+      </div>
+      <!-- Puedes agregar un footer si es necesario -->
+    </div>
+  </div>
+</div>
+  </div>
+  {% block scripts %}
+  <script>
+    document.getElementById('registerBtn').addEventListener('click', function() {
+      window.location.href = "";
+    });
+  </script>
+  {% endblock %}
+{% endblock content %}

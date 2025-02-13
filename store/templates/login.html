@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<div class="container">
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img class="img-fluid" src="../static/img/jardineria.png" alt="loginImagen" width="400" height="400" />
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <p class="lead fw-normal mb-0 me-3">Iniciar Sesión</p>
+                    </div>
+                    <div class="divider d-flex align-items-center my-2"></div>
+                    <!-- Usuario -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="id_username">Usuario o Correo Electrónico</label>
+                        {{ form.username }}
+                    </div>
+                    <!-- Contraseña -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="id_password">Contraseña</label>
+                        {{ form.password }}
+                    </div>
+                    <!-- Opciones adicionales -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" id="remember_me">
+                            <label class="form-check-label" for="remember_me">Recordarme</label>
+                        </div>
+                        <a class="text-body" href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    <div class="p-2">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </div>
+                </form>
+                
+                {% comment %} <form action="">
+                    <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                        <p class="lead fw-normal mb-0 me-3">Iniciar Sesion</p>
+                    </div>
+                    <div class="divider d-flex align-items-center my-2"></div>
+                    <!-- Correo Electroniico -->
+                    <div class="form-outline mb-4">
+                        <input class="form-control form-control-lg" type="email"  placeholder="Tu correo">
+                        <label class="form-label" for="">Correo Electronico</label>
+                    </div>
+                    <!-- Password -->
+                     <div class="form-outline mb-3">
+                        <input class="form-control form-control-lg" type="password"  placeholder="Tu Contraseña">
+                        <label class="form-label" for="">Contraseña</label>
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center">
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox">
+                            <label class="form-check-label" for="">Recordarme</label>
+                        </div>
+                        <a class="text-body" href="#">Olvido su Contraseña</a>
+                        
+                     </div>
+                    <div class="p-2">
+                        <button class="btn btn-primary">Inciar Sesion</button>
+                    </div>
+                </form> {% endcomment %}
+            </div>
+        </div>
+    </div>
+  </section>
+</div>
+{% endblock content %}

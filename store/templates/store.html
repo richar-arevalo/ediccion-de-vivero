@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<style>
+  .title {
+    font-size: 2rem;
+  }
+
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card {
+    width: 18rem;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Puedes usar space-between si lo prefieres */
+  }
+</style>
+<div class="container">
+  <h1 class="title text-center">Tienda vida verde</h1>
+  {% for product in products %}
+  <div class="d-flex justify-content-between">
+    <!-- diseño de tarjeta de producto -->
+    <div class="card">
+      <img
+        class="card-img-top"
+        src="{{ product.image.url }}"
+        alt="{{ product.name }}"
+      />
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text text-justify">{{ product.description }}</p>
+        <!-- Precio estilizado -->
+        <p class="font-weight-bold text-success h5 mb-3">${{ product.price }} || Cajas {{ product.stock }}</p>
+        
+        <!-- Botón centrado y con margen superior -->
+        <a
+        href="{% url 'agregar_compras' product.id %}"
+        class="btn btn-outline-success d-inline-flex align-items-center justify-content-center"
+      >
+        Agregar
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-cart-fill ml-2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+          />
+        </svg>
+      </a>
+      
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock content %}
+</div>

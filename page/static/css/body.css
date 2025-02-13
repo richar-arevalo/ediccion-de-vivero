@@ -1,0 +1,7 @@
+body {
+    /* Created with https://www.css-gradient.com */
+    --background-color: #AFC8AD;
+    color: hsla(0, 0%, 0%, .6);
+    background: var(--background-color);
+    
+  }

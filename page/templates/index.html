@@ -1,0 +1,41 @@
+{% extends 'base.html' %}  
+{% load static %}
+{% block content %}
+<div class="jumbotron">
+  {% comment %} container {% endcomment %}
+  <!-- Tarjeta de Bienvenida -->
+  <div class="card mt-4" style="background-image: url('../static/img/background1.jpeg'); background-size: cover;">
+    <div class="card-body text-center" > 
+      {% comment %} style="background-color: rgba(0, 0, 0, 0.6); padding: 20px;" {% endcomment %}
+      <h1 class="card-title text-white">Vida Verde</h1>
+      {% comment %} text-white {% endcomment %}
+      <h4 class="card-subtitle mb-3 text-white">En servicio desde 2015</h4>
+      {% comment %} text-white {% endcomment %}
+      <a href="https://wa.me/+593990251975" class="btn btn-outline-light btn-lg">Contactanos</a>
+    </div>
+  </div>
+</div>
+{% include "card.html" %}
+{% endblock content %}
+
+
+
+
+<!--  width: 100%;
+    max-width: 100%; 
+   height: auto;-->
+
+<!-- <div class="col-md-6">
+        <div class="banner-text">
+          <div class="text-container">
+            <h1>Invernadero</h1>
+            <h3>Encuentra gran variedad de plantas</h3>
+            <p>Invernadero Malacatos desde 2012 ofrece una gran variedad de plantas frutales</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="banner-container">
+          <img src="{% static 'img/back1.png' %}" alt="fondo" class="fondo">
+        </div>
+      </div> -->

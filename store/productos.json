@@ -1,0 +1,52 @@
+[
+    {
+      "model": "store.producto",
+      "fields": {
+        "name": "Tomate Cherry",
+        "description": "Delicioso tomate cherry ideal para ensaladas.",
+        "price": "1.50",
+        "stock": 50,
+        "image": "productos/tomate_cherry.jpg",
+        "created_at": "2024-11-14T12:00:00Z",
+        "updated_at": "2024-11-14T12:00:00Z"
+      }
+    },
+    {
+      "model": "store.producto",
+      "fields": {
+        "name": "Lechuga Romana",
+        "description": "Lechuga fresca y crujiente.",
+        "price": "0.75",
+        "stock": 80,
+        "image": "productos/lechuga_romana.jpg",
+        "created_at": "2024-11-14T12:00:00Z",
+        "updated_at": "2024-11-14T12:00:00Z"
+      }
+    },
+    {
+      "model": "store.producto",
+      "fields": {
+        "name": "Tomate Cherry",
+        "description": "Delicioso tomate cherry ideal para ensaladas.",
+        "price": "1.50",
+        "stock": 50,
+        "image": "productos/tomate_cherry.jpg",
+        "created_at": "2024-11-14T12:00:00Z",
+        "updated_at": "2024-11-14T12:00:00Z"
+      }
+    },
+    {
+      "model": "store.producto",
+      "fields": {
+        "name": "Lechuga Romana",
+        "description": "Lechuga fresca y crujiente.",
+        "price": "0.75",
+        "stock": 80,
+        "image": "productos/lechuga_romana.jpg",
+        "created_at": "2024-11-14T12:00:00Z",
+        "updated_at": "2024-11-14T12:00:00Z"
+      }
+    }
+    
+  ]
+  
